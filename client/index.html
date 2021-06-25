@@ -4,9 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <title>Problema del Borracho</title>
+    <script src="https://unpkg.com/mathjs@9.4.3/lib/browser/math.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
 </head>
 <body>
-    ola q tal
+
+    <div class="shadow p-3 m-5 bg-light rounded text-center">
+        <h1 class="text-primary">Problema del Ebrio</h1>
+
+        <p>Enunciado: <strong>Supongamos que un ebrio está parado en una esquina, cuando decide caminar para que le pase el efecto “ya ustedes saben cuál”.
+             Supongamos que existe una probabilidad igual de que se dirija al norte, sur, este u oeste al llegar a cada esquina. Si camina 10 calles, ¿Cuál 
+             es la probabilidad de que termine su recorrido a dos calles de donde lo empezó?</strong>
+        
+        </p>
+
+        <p>Solución: se realizó un objeto "Borracho" que camina aleatoriamente desde un punto (0,0) a un destino incierto, luego se realizó
+            una simulación en donde se testeó varias veces el problema, se evaluaron los casos favorables y con ello se sacó la probabilidad
+            simple de casos favorables dividido entre casos totales, abajo se tiene un ebrio de prueba para demostrar la aleatoriedad del 
+            experimento (cada vez que se cargue la página el ebrio será distinto)
+        </p>
+        
+
+
+            <h2 class="text-primary">Tabla del ebrio de prueba</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Movimiento</th>
+                    <th>X</th>
+                    <th>Y</th>
+                  </tr>
+                </thead>
+                <tbody class="tabla">
+                </tbody>
+              </table> 
+            
+              <h2 class="text-primary">Gráfica del ebrio de prueba</h2>
+    
+            <div id="plot"></div>
+
+        <h4 class="text-primary">Basado en un análisis de 1 millón de pruebas, la probabilidad de que un ebrio que camine aleatoriamente en la calle del norte, del
+            sur, este u oeste 10 veces y se quede a 2 calles de distancia es:
+        </h4>
+        <div class="border border-danger p-2">
+            <h1 class="text-primary simulacion"></h1>
+            <small>*Resultados pueden variar con un margen de error de aproximadamente 0.2%</small>
+        </div>
+        
+    </div>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>
