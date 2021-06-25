@@ -55,7 +55,7 @@ const draw = async () => {
       }
 
 
-      // render the plot using plotly
+      
       const trace1 = {
         x: xValues,
         y: yValues,
